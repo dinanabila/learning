@@ -43,4 +43,4 @@ const detectTriangle = (a, b, c) => {
     }
   };
 
-  console.log(detectTriangle(2, 3, null));
+  console.log(detectTriangle(2, 3, 4));
