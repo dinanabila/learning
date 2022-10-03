@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    font-family: 'Josefin Sans', serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+ 
+main {
+    padding: 20px;
+    overflow: auto;
+}
+ 
+header {
+    display: inline;
+}
+ 
+h2, h3 {
+    color: #ee2e78;
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17.5px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+hr {
+    border-top: 1px solid lightgray;
+}
+ 
+footer {
+    padding: 2px;
+    color: white;
+    background-color: rosybrown;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p {
+    font-size: small;
+}
+ 
+.judul {
+    padding: 42px;
+    background-color: lightcoral;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+ 
+nav {
+   background-color: rosybrown;
+   padding: 0.02px;
+   position: sticky;
+   top: 0;
+}
+ 
+nav a {
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+}
+ 
+nav a:hover {
+    font-weight: bold;
+}
+ 
+nav li {
+   display: inline;
+   list-style-type: none;
+   margin-right: 20px;
+   font-family: 'Josefin Sans', sans-serif;
+}
+ 
+.featured-image {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    object-position: center;
+    margin: 20px 0 20px;
+}
+ 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 35px;
+    margin: 20px;
+    background-color: antiquewhite;
+}
+ 
+#content {
+    float: left;
+    width: 75%;
+}
+ 
+aside {
+    float: right;
+    width: 25%;
+}
+
+aside .card {
+    padding: 15px;
+    background-color: lavenderblush;
+}
+
+.other {
+    text-align: center;
+}
+
+.other img {
+    width: 100%;
+    border-radius: 50%;
+    margin: 20px 0 20px;
+}
+
+.other figcaption {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: larger;
+}
+
+.other p, .other li {
+    text-align: center;
+    line-height: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: medium;
+}
+
+.other ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    color: white;
+    background-color: indianred;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+}
+
+.panah { 
+    width: 58px; 
+    height: 58px; 
+    position: fixed; 
+    bottom: 55px; 
+    right: 45px; 
+    z-index: 99; 
+    cursor: pointer; 
+    border-radius: 100px; 
+    transition: all .5s; 
+    opacity: 0.5; 
+    background: lightsalmon url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center;
+}
+
+.panah:hover {
+    background: salmon url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center;
+}
+ 
+@media screen and (max-width: 1000px) {
+    #content,
+    aside {
+       width: 100%;
+       padding: 0;
+    }
+    .other img {
+        width: 200px;
+    }
+    .panah {
+        width:42px; 
+        height: 42px; 
+        bottom: 55px; 
+        right: 6px;
+    }
+}
