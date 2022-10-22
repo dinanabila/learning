@@ -1,6 +1,6 @@
 # Screenshot
 
-Berikut diberikan screenshoot tampilan dari website 3 Karakter Anime Inspirasi Kaum Hawa: 
+Berikut diberikan screenshoot tampilan dari website 3 Karakter Anime Inspirasi Kaum Hawa (link: https://dinanabila.github.io/learning/submissionDicoding/tigaKarakterAnimeInspirasiKaumHawa/#mavis): 
 
 ![screencapture-file-D-Git-tigaKarakterAnimeInspirasiKaumHawa-index-html-2022-10-03-11_21_22](https://user-images.githubusercontent.com/103731788/193501142-50042f72-fb90-4653-91b0-d5d536143b27.png)
 
