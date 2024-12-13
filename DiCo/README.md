@@ -1,8 +1,12 @@
 # DiCo - Dicoding Collection Dashboard ✨
 
 ## Background
-_cerita hanya fiktif dan untuk tujuan belajar analisis data_
+_cerita hanya fiktif belaka, dibuat untuk tujuan belajar analisis data_
+
 Dicoding Collection, lebih dikenal sebagai DiCo, merupakan sebuah perusahaan yang bergerak di bidang fashion. Ia memproduksi berbagai item fashion dan menjualnya melalui platform online. 
+
+![DiCo Logo](https://github.com/dicodingacademy/assets/raw/main/logo.png)
+
 Sebagai perusahaan kekinian, DiCo menyadari betapa pentingnya data bagi perkembangan sebuah bisnis. Oleh karena itu, ia menyimpan semua history penjualan beserta informasi terkait produk dan customers dalam sebuah database. Database ini terdiri dari empat buah tabel, antara lain customers, orders, products, dan sales.
 
 ## Dataset
