@@ -67,9 +67,34 @@ random.shuffle(list_pw)
 
 # print(str(list_pw)) ---> ga bisa ternyata langsung ubah jadi str
 # harus gini dulu, based on nyari di google (datacamp):
-# src: https://www.datacamp.com/tutorial/how-to-convert-a-list-to-a-string-in-python?utm_source=google&utm_medium=paid_search&utm_campaignid=19589720824&utm_adgroupid=157156376311&utm_device=c&utm_keyword=&utm_matchtype=&utm_network=g&utm_adpostion=&utm_creative=684592140434&utm_targetid=aud-1459190388940:dsa-2218886984100&utm_loc_interest_ms=&utm_loc_physical_ms=9072592&utm_content=&utm_campaign=230119_1-sea~dsa~tofu_2-b2c_3-row-p2_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&gad_source=1&gclid=CjwKCAiAg8S7BhATEiwAO2-R6udO4LIVWOb4eP_TBFsU1NPjf3MjKxvecvaJ2y6kc8mCg7L5Es2CohoCp_gQAvD_BwE
+# src: https://www.datacamp.com/tutorial/how-to-convert-a-list-to-a-string-in-python
 
 delimiter = "" # define a delimiter
 pw = delimiter.join(list_pw)
 print("\npassword kuat: ")
 print(pw, "\n")
+
+# cobain solusi dari mbak angela
+password_list = [] # wah ga kepikiran pakai list
+for i in range(0, nr_letters):
+    random_letter = random.choice(letters)
+    password_list.append(random_letter) # inget, pake append ya kalau list, ga bisa +
+
+for i in range(0, nr_symbols):
+    random_symbol = random.choice(symbols)
+    password_list.append(random_symbol)
+
+for i in range(0, nr_numbers):
+    random_number = random.choice(numbers)
+    password_list.append(random_number)
+
+# acak dulu isinya, soalnya kan masih berurutan letter-symbol-number
+random.shuffle(password_list)
+
+# ubah list ke str
+password = ""
+for char in password_list:
+    password += char
+
+print("opsi lain password kuat: ")
+print(password, "\n")
