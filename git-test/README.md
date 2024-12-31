@@ -10,3 +10,5 @@ list commit berturut-turut sebelum push:
 3. update readme.md
 4. bikin test.py
 5. update readme.md
+6. bikin test2.txt
+7. update readme
