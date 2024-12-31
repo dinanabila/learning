@@ -50,4 +50,4 @@ Yang terjadi adalah ini:
 Walaupun commit nya pas offline dan vscode nya kututup, 
 ternyata tetap reserved juga last commit date per commit-nya pas di-push online sekaligus.
 
-Jadi, commit berturut-turut pas **offline** sebelum push pas online sekaligus = **valid**. 
+Jadi, commit berturut-turut pas **offline** sebelum push sekaligus pas online = **valid**. 
