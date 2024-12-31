@@ -10,22 +10,18 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 def caesar(pesan_awal, banyak_loncatan, enkripsi_atau_dekripsi):
     hasil =""
-    for huruf in pesan_awal:     
-        if enkripsi_atau_dekripsi == 'enkripsi':
-            if huruf == " ":
-                huruf += " "
+    if enkripsi_atau_dekripsi == "dekripsi":
+                banyak_loncatan *= -1
+    if enkripsi_atau_dekripsi != "enkripsi" and enkripsi_atau_dekripsi != "dekripsi":
+        print("typo, ketik enkripsi / dekripsi")
+    else:
+        for huruf in pesan_awal:
             if huruf not in alphabet:
-                hasil += huruf  
-            hasil += alphabet[(alphabet.index(huruf) + banyak_loncatan) % len(alphabet)]
-        elif enkripsi_atau_dekripsi == 'dekripsi':
-            if huruf == " ":
-                huruf += " "
-            if huruf not in alphabet:
-                hasil += huruf 
-            hasil += alphabet[(alphabet.index(huruf) - banyak_loncatan) % len(alphabet)]
-            print("hasil:", hasil)
-        else:
-            print("Typo di tujuan. Coba lagi (ketik dekripsi / enkripsi)")
+                hasil += huruf
+            else: 
+                hasil += alphabet[(alphabet.index(huruf) + banyak_loncatan) % len(alphabet)]
+
+        print("hasil:", hasil)
 
 # TODO 3: Bikin programnya restart sesuai keinginan user (tanya user, mau lagi atau udahan?)
 lagi = "ya"
@@ -36,4 +32,7 @@ while lagi == 'ya':
 
     caesar(pesan, shift, tujuan)
 
-    lagi = input("Mau enkripsi / dekripsi pesan lagi? (ya/ga): ").lower()
+    lagi = input("Mau enkripsi / dekripsi pesan lagi? (ketik ya/ga): ").lower()
+
+    if lagi == 'ga':
+         print("See ya")
