@@ -31,18 +31,18 @@ Jadi pastiin di-save dulu sebelum commit.
 
 
 *"Lalu apa yang terjadi kalau late push?"*
-Di sini aku coba commit update-an readme ini pukul 15.00
+Di sini aku coba commit update-an readme ini pukul 15.00.
 
 Aku bakal push pukul 15.30, terus cek, apa yang terjadi?
 ---> jawab: last created commit nya tetap ter-reserved. 
-Tercatat +-30 menit yang lalu, bukan baru aja. 
+Tercatat +-30 menit yang lalu, bukan "now". 
 
 ![alt text](image-1.png)
 
 Jadi, waktu commit tetap ter-reserved, ga peduli kapan waktu push-nya = **valid**.
 
 
-*Pertanyaan selanjutnya: gimana kalau commit nya offline?*
+Pertanyaan selanjutnya: *"gimana kalau commit nya offline?"*
 
 Yang terjadi adalah ini:
 ![alt text](image-2.png)
