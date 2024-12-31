@@ -50,17 +50,17 @@ def dekripsi(pesan_awal, banyak_loncatan):
 
 def caesar(pesan_awal, banyak_loncatan, enkripsi_atau_dekripsi):
     hasil =""
-    for huruf in pesan_awal:
-        if huruf == " ":
-            hasil += " "
-        else:
-            if enkripsi_atau_dekripsi == 'enkripsi':
+    if enkripsi_atau_dekripsi != "enkripsi" or enkripsi_atau_dekripsi != "dekripsi":
+        print("typo, ketik enkripsi / dekripsi")
+    else: 
+        for huruf in pesan_awal:
+            if huruf not in alphabet:
+                hasil += huruf
+            else: 
+                if enkripsi_atau_dekripsi == "dekripsi":
+                    banyak_loncatan *= -1
                 hasil += alphabet[(alphabet.index(huruf) + banyak_loncatan) % len(alphabet)]
-            elif enkripsi_atau_dekripsi == 'dekripsi':
-                hasil += alphabet[(alphabet.index(huruf) - banyak_loncatan) % len(alphabet)]
-            else:
-                print("Typo di tujuan. Coba lagi (ketik dekripsi / enkripsi)")
-    
-    print("hasil:", hasil)
+
+        print("hasil:", hasil)
 
 caesar(pesan, shift, tujuan)
