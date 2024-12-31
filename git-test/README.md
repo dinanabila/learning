@@ -5,7 +5,7 @@ Di sini aku ngetes,
 *terus nge-push nya setelah beberapa commit udah dibikin,*
 *kira-kira apa yang terjadi?"*
 
-list commit berturut-turut sebelum push:
+List commit berturut-turut sebelum push:
 1. bikin subrepo baru
 2. bikin readme.md
 3. update readme.md
@@ -17,16 +17,16 @@ list commit berturut-turut sebelum push:
 Yang terjadi adalah ini:
 ![alt text](image.png)
 
-time per commit nya ke-reserved, 
+Time per commit nya ke-reserved, 
 jadi ga based on kapan nge-pushnya. 
-yang alhasil, 
+Yang alhasil, 
 masing-masing last created commit nya tercetak based on masing-masing commit. 
 **insight: created time per commit nya independen, bukan based on waktu push.** 
 
-yang perlu dicatat juga, 
+Yang perlu dicatat juga, 
 **kalau perubahan yang kita bikin belum di-save di lokal,** 
 **file-nya ga ikut ke-commit.** 
-jadi pastiin di-save dulu sebelum commit/ 
+Jadi pastiin di-save dulu sebelum commit. 
 
 
 
@@ -44,3 +44,10 @@ Jadi, waktu commit tetap ter-reserved, ga peduli kapan waktu push-nya = **valid*
 
 *Pertanyaan selanjutnya: gimana kalau commit nya offline?*
 
+Yang terjadi adalah ini:
+![alt text](image-2.png)
+
+Walaupun commit nya pas offline dan vscode nya kututup, 
+ternyata tetap reserved juga last commit date per commit-nya pas di-push online sekaligus.
+
+Jadi, commit berturut-turut pas **offline** sebelum push pas online sekaligus = **valid**. 
