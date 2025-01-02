@@ -5,7 +5,8 @@ travel_log = {
     "Asia" : {
         "Japan": ["Kyoto", "Tokyo"],
         "Korea": "Seoul"
-    }
+    },
+    "Europe": "London",
 }
 
 # Test: gimana cara manggil Indonesia?
@@ -16,6 +17,11 @@ print(travel_log["Indonesia"][1])
 
 # Task: gimana cara manggil Kyoto?
 print(travel_log["Asia"]["Japan"][0])
+
+# Task: gimana cara manggil Europe berdasarkan London?
+for key, value in travel_log.items():
+    if value == 'London':
+        print(key)
 
 nested_list = ["A", "B", ["C", "D"]]
 # Task: gimana cara manggil D?
