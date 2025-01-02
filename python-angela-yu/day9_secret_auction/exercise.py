@@ -8,6 +8,9 @@ travel_log = {
     }
 }
 
+# Test: gimana cara manggil Indonesia?
+print(list(travel_log.keys())[0])
+
 # Task: gimana cara manggil Papua?
 print(travel_log["Indonesia"][1])
 
