@@ -20,13 +20,15 @@ print("\nSELAMAT DATANG DI SECRET AUCTION\n")
 
 def secret_auction(auction):
     max_bid = 0
-    index_max_bid = 0
-    for i in auction["jumlah_bid"]:
-        if i > max_bid:
-            max_bid = i
-            index_max_bid = auction["jumlah_bid"].index()
-            pemenang = auction["nama_bidder"][index_max_bid]
-    print(f"Pemenangnya: {pemenang}")
+    pemenang = ""
+    for i in auction:
+        if auction[i] > max_bid:
+            max_bid = auction[i]
+    
+    for key, value in auction.items():
+        if value  == max_bid:
+            pemenang += " " + key
+    print(f"Pemenangnya:{pemenang}")
 
 auction = {}
 
@@ -42,6 +44,9 @@ while orang_selanjutnya == "ya":
     print("\n" * 100)
 
     if orang_selanjutnya != "ya":
-        # secret_auction(auction)
-        print(auction)
+        print("\nList semua bid:")
+        for key, value in auction.items():
+            print(f"{key}: {value}")
+        print("\n")
+        secret_auction(auction)
     
