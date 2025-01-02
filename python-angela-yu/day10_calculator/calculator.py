@@ -29,20 +29,40 @@ while kalkulator_hidup:
     print(kalkulator)
     hasil = 0
     lanjut = True
-
     a = float(input("Angka pertama: "))
     while lanjut:
-        print("+\n-\n*\n/")
+        # print("+\n-\n*\n/")
+        # ========
+        # ANGELA'S
+        # ========
+        # aku ga kepikiran buat ngambil key aja dari dictionary operasi, 
+        # jadi manual print aja tadinya
+        for key in operasi:
+            print(key)
+        # ============
+        # END ANGELA'S
+        # ============
+
         hitung = input("Operasi: ")
         b = float(input("Angka kedua: "))
-        a = operasi[hitung](a, b)
-        print(f"hasil: {a}")
-        lanjut_hitungan = input("Ketik 'y' kalau mau lanjutin hitungan ini. Ketik 'n' kalau mau ngitung hitungan baru: ").lower()
+        hasil = operasi[hitung](a, b)
+        print(f"{a} {hitung} {b} = {hasil}")
+        lanjut_hitungan = input("Ketik 'y' kalau mau lanjutin hitungan ini. \nKetik 'n' kalau mau ngitung hitungan baru. \nKetik 'z' kalau mau matiin kalkulator \nInput: ").lower()
         
         if lanjut_hitungan == 'y':
-            lanjut = True
+            a = hasil
         elif lanjut_hitungan == 'n':
+            print("\n" * 100)
             lanjut = False
-    
-    if lanjut_hitungan == 'n':
-        print("\n" * 100)
+        elif lanjut_hitungan == 'z':
+            print("Sampai jumpa")
+            lanjut = False
+            kalkulator_hidup = False
+
+# ========
+# ANGELA's
+# ========
+# Angela ga pakai while loop lagi buat matiin kalkulator.
+# (sementara aku pakai while kalkulator_hidup)
+# Jadi simply seluruh programnya jadiin fungsi aja, namain kalkulator().
+# User tinggal matiin aja programnya kalau memang mau udahan. 
