@@ -13,9 +13,7 @@ from art import blackjack
 import random
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-hand = []
-kartu_pemain = []
-kartu_komputer = []
+
 # TODO 3: bikin list buat pilihan random komputer: pass / ambil kartu lagi
 pilihan_aksi = ['pass', 'hand']
 
@@ -31,70 +29,98 @@ def hitung_skor(kartu_siapa):
         skor += kartu_siapa[i]
     return skor
 
-# print("Hai, aku komputer 'v')/")
-# main_lagi = input("Mau main satu ronde blackjack sama aku? \nKetik 'y' kalau mau, 'g' kalau ga: ").lower()
-# print(blackjack)
+print("Hai, aku komputer 'v')/")
+print("Mau main satu ronde blackjack sama aku?")
 
-# TODO 1: bikin first card pemain dan komputer pakai random
-kartu_pemain = ambil_kartu(2, kartu_pemain)
-kartu_komputer = ambil_kartu(2, kartu_komputer)
-skor_pemain = hitung_skor(kartu_pemain)
-skor_komputer = hitung_skor(kartu_komputer)
-print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
-
-pemain_aman = True
-komputer_aman = True
-# TODO 4: bikin while skor_pemain <= 21 dan skor_komputer <= 21
-while pemain_aman:
-    aksi_pemain = input("Ketik 'y' kalau mau tambah kartu, ketik 'g' kalau mau pass aja: ").lower()
-
-    # TODO 2: susun kondisional if else mentah biar ada gambaran
-    if aksi_pemain == 'y':
-        kartu_pemain = ambil_kartu(1, kartu_pemain)
-        skor_pemain = hitung_skor(kartu_pemain)
-        if skor_pemain > 21:
-            pemain_aman = False
-            komputer_aman = False
-            print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-            print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
-            print("Skormu kebablasan. Kamu kalah :(")
+# TODO 5: bikin while masih mau main
+masih_mau_main = True
+while masih_mau_main: 
+    hand = []
+    kartu_pemain = []
+    kartu_komputer = []
+    # TODO 6: bikin while typo input
+    typo = True
+    while typo:
+        main_lagi = input("Ketik 'y' kalau mau, 'g' kalau ga: ").lower()
+        if main_lagi == 'y' or main_lagi == 'g':
+            typo = False
         else:
-            print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-            print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
-            # balik ke input aksi_pemain
-            # bikin loop while <= 21 berarti
+            print("Typo. Coba lagi.")
+    print(blackjack)
+
+    # TODO 1: bikin first card pemain dan komputer pakai random
+    kartu_pemain = ambil_kartu(2, kartu_pemain)
+    kartu_komputer = ambil_kartu(2, kartu_komputer)
+    skor_pemain = hitung_skor(kartu_pemain)
+    skor_komputer = hitung_skor(kartu_komputer)
+    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+    print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
+
+    pemain_aman = True
+    komputer_aman = True
+    # TODO 4: bikin while skor_pemain <= 21 dan skor_komputer <= 21
+    while pemain_aman:
+        # TODO 7: bikin while typo input
+        typo = True
+        while typo:
+            aksi_pemain = input("\nKetik 'y' kalau mau tambah kartu, ketik 'g' kalau mau pass aja: ").lower()
+            if aksi_pemain == 'y' or aksi_pemain == 'g':
+                typo = False
+            else:
+                print("Kamu typo. Coba input ulang.")
+
+        # TODO 2: susun kondisional if else mentah biar ada gambaran
+        if aksi_pemain == 'y':
+            kartu_pemain = ambil_kartu(1, kartu_pemain)
+            skor_pemain = hitung_skor(kartu_pemain)
+            if skor_pemain > 21:
+                pemain_aman = False
+                komputer_aman = False
+                print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
+                print("Skormu kebablasan. Kamu kalah :(")
+            else:
+                print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
+                # balik ke input aksi_pemain
+                # bikin loop while <= 21 berarti
+        else:
+            while komputer_aman:
+                aksi_komputer = random.choice(pilihan_aksi)
+                if aksi_komputer == 'hand': 
+                    kartu_komputer = ambil_kartu(1, kartu_komputer)
+                    skor_komputer = hitung_skor(kartu_komputer)
+                    if skor_komputer > 21:
+                        komputer_aman = False
+                        pemain_aman = False
+                        print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                        print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
+                        print("Skor lawan kebablasan. Kamu menang :D")
+                    # else:
+                        # balik lagi ke input random aksi_komputer
+                        # ini juga loop while <= 21
+                elif aksi_komputer == 'pass':
+                    if skor_pemain > skor_komputer:
+                        komputer_aman = False
+                        pemain_aman = False
+                        print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                        print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
+                        print("Kamu menang :D")
+                    elif skor_pemain == skor_komputer:
+                        komputer_aman = False
+                        pemain_aman = False
+                        print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                        print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
+                        print("Seri")
+                    else:
+                        komputer_aman = False
+                        pemain_aman = False
+                        print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                        print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
+                        print("Kamu kalah D:")
+    
+    if main_lagi == 'g':
+        print('See ya')
+        masih_mau_main = False
     else:
-        while komputer_aman:
-            aksi_komputer = random.choice(pilihan_aksi)
-            if aksi_komputer == 'hand': 
-                kartu_komputer = ambil_kartu(1, kartu_komputer)
-                skor_komputer = hitung_skor(kartu_komputer)
-                if skor_komputer > 21:
-                    komputer_aman = False
-                    pemain_aman = False
-                    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-                    print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
-                    print("Skor lawan kebablasan. Kamu menang :D")
-                # else:
-                    # balik lagi ke input random aksi_komputer
-                    # ini juga loop while <= 21
-            elif aksi_komputer == 'pass':
-                if skor_pemain > skor_komputer:
-                    komputer_aman = False
-                    pemain_aman = False
-                    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-                    print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
-                    print("Kamu menang :D")
-                elif skor_pemain == skor_komputer:
-                    komputer_aman = False
-                    pemain_aman = False
-                    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-                    print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
-                    print("Seri")
-                else:
-                    komputer_aman = False
-                    pemain_aman = False
-                    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-                    print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
-                    print("Kamu kalah D:")
+        print("\nMau main satu ronde blackjack lagi sama aku?")
