@@ -4,7 +4,7 @@
 # 1. deck unlimited
 # 2. ga ada joker
 # 3. j/q/k dianggap 10
-# 4. as dianggap 11
+# 4. as dianggap 11 (di awal)
 # 5. deck: cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 # 6. peluang terambilnya setiap kartu adalah sama
 # 7. dealer: komputer
@@ -26,10 +26,23 @@ def ambil_kartu(banyak_kartu, kartu_siapa):
 
 def hitung_skor(kartu_siapa):
     '''Hitung skor dari user "kartu_siapa"'''
-    skor = 0
-    for i in range(len(kartu_siapa)):
-        skor += kartu_siapa[i]
-    return skor
+    # skor = 0
+    # for i in range(len(kartu_siapa)):
+    #     skor += kartu_siapa[i]
+    # return skor
+    # ========
+    # ANGELA's
+    # ========
+    if sum(kartu_siapa) and len(kartu_siapa) == 2:
+        return 0
+    if sum(kartu_siapa) > 21 and 11 in kartu_siapa:
+        kartu_siapa.remove(11)
+        kartu_siapa.append(1)
+        return sum(kartu_siapa)
+    return sum(kartu_siapa)
+    # ============
+    # END ANGELA's
+    # ============
 
 # TODO 8: bikin fungsi print keadaan terakhir kartu pemain & komputer biar ga redundant
 def keadaan_terakhir():
@@ -83,6 +96,10 @@ while masih_mau_main:
         if aksi_pemain == 'y':
             kartu_pemain = ambil_kartu(1, kartu_pemain)
             skor_pemain = hitung_skor(kartu_pemain)
+            # TODO 9:tambahin kondisi blackjack ke user
+            if skor_pemain == 0:
+                keadaan_terakhir()
+                print("Blackjack. Kamu menang :3")
             if skor_pemain > 21:
                 keadaan_terakhir()
                 print("Skormu kebablasan. Kamu kalah :(")
@@ -93,26 +110,31 @@ while masih_mau_main:
                 # bikin loop while <= 21 berarti
         else:
             while komputer_aman:
-                aksi_komputer = random.choice(pilihan_aksi)
-                if aksi_komputer == 'hand': 
-                    kartu_komputer = ambil_kartu(1, kartu_komputer)
-                    skor_komputer = hitung_skor(kartu_komputer)
-                    if skor_komputer > 21:
-                        keadaan_terakhir()
-                        print("Skor lawan kebablasan. Kamu menang :D")
-                    # else:
-                        # balik lagi ke input random aksi_komputer
-                        # ini juga loop while <= 21
-                elif aksi_komputer == 'pass':
-                    if skor_pemain > skor_komputer:
-                        keadaan_terakhir()
-                        print("Kamu menang :D")
-                    elif skor_pemain == skor_komputer:
-                        keadaan_terakhir()
-                        print("Seri")
-                    else:
-                        keadaan_terakhir()
-                        print("Kamu kalah D:")
+                # TODO 10: tambahin kondisi blackjack ke komputer
+                if skor_komputer == 0:
+                    keadaan_terakhir()
+                    print("Komputer dapet blackjack! Kamu kalah D:")
+                else:
+                    aksi_komputer = random.choice(pilihan_aksi)
+                    if aksi_komputer == 'hand': 
+                        kartu_komputer = ambil_kartu(1, kartu_komputer)
+                        skor_komputer = hitung_skor(kartu_komputer)
+                        if skor_komputer > 21:
+                            keadaan_terakhir()
+                            print("Skor lawan kebablasan. Kamu menang :D")
+                        # else:
+                            # balik lagi ke input random aksi_komputer
+                            # ini juga loop while <= 21
+                    elif aksi_komputer == 'pass':
+                        if skor_pemain > skor_komputer:
+                            keadaan_terakhir()
+                            print("Kamu menang :D")
+                        elif skor_pemain == skor_komputer:
+                            keadaan_terakhir()
+                            print("Seri")
+                        else:
+                            keadaan_terakhir()
+                            print("Kamu kalah D:")
     
     if main_lagi == 'g':
         print('See ya')
