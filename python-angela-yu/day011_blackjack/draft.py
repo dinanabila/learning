@@ -33,7 +33,7 @@ def hitung_skor(kartu_siapa):
     # ========
     # ANGELA's
     # ========
-    if sum(kartu_siapa) and len(kartu_siapa) == 2:
+    if sum(kartu_siapa) == 21 and len(kartu_siapa) == 2:
         return 0
     if sum(kartu_siapa) > 21 and 11 in kartu_siapa:
         kartu_siapa.remove(11)
@@ -47,8 +47,6 @@ def hitung_skor(kartu_siapa):
 # TODO 8: bikin fungsi print keadaan terakhir kartu pemain & komputer biar ga redundant
 def keadaan_terakhir():
     '''Print semua kartu di tangan player dan komputer beserta skornya'''
-    pemain_aman = False
-    komputer_aman = False
     print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
     print(f"    Kartu di tangan komputer: {kartu_komputer}, skor komputer: {skor_komputer}")
 
@@ -61,6 +59,8 @@ while masih_mau_main:
     hand = []
     kartu_pemain = []
     kartu_komputer = []
+    pemain_aman = True
+    komputer_aman = True
     # TODO 6: bikin while typo input
     typo = True
     while typo:
@@ -69,75 +69,89 @@ while masih_mau_main:
             typo = False
         else:
             print("Typo. Coba lagi.")
-    print(blackjack)
+    if main_lagi == 'y':
+        print("\n" * 100)
+        print(blackjack)
 
-    # TODO 1: bikin first card pemain dan komputer pakai random
-    kartu_pemain = ambil_kartu(2, kartu_pemain)
-    kartu_komputer = ambil_kartu(2, kartu_komputer)
-    skor_pemain = hitung_skor(kartu_pemain)
-    skor_komputer = hitung_skor(kartu_komputer)
-    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-    print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
+        # TODO 1: bikin first card pemain dan komputer pakai random
+        kartu_pemain = ambil_kartu(2, kartu_pemain)
+        kartu_komputer = ambil_kartu(2, kartu_komputer)
+        skor_pemain = hitung_skor(kartu_pemain)
+        skor_komputer = hitung_skor(kartu_komputer)
+        print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+        print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
 
-    # TODO 4: bikin while skor_pemain <= 21 dan skor_komputer <= 21
-    pemain_aman = True
-    komputer_aman = True
-    while pemain_aman:
-        # TODO 7: bikin while typo input
-        typo = True
-        while typo:
-            aksi_pemain = input("\nKetik 'y' kalau mau tambah kartu, ketik 'g' kalau mau pass aja: ").lower()
-            if aksi_pemain == 'y' or aksi_pemain == 'g':
-                typo = False
-            else:
-                print("Kamu typo. Coba input ulang.")
-
-        # TODO 2: susun kondisional if else mentah biar ada gambaran
-        if aksi_pemain == 'y':
-            kartu_pemain = ambil_kartu(1, kartu_pemain)
-            skor_pemain = hitung_skor(kartu_pemain)
-            # TODO 9:tambahin kondisi blackjack ke user
-            if skor_pemain == 0:
-                keadaan_terakhir()
-                print("Blackjack. Kamu menang :3")
-            if skor_pemain > 21:
-                keadaan_terakhir()
-                print("Skormu kebablasan. Kamu kalah :(")
-            else:
-                print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
-                print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
-                # balik ke input aksi_pemain
-                # bikin loop while <= 21 berarti
-        else:
-            while komputer_aman:
-                # TODO 10: tambahin kondisi blackjack ke komputer
-                if skor_komputer == 0:
-                    keadaan_terakhir()
-                    print("Komputer dapet blackjack! Kamu kalah D:")
+        # TODO 4: bikin while skor_pemain <= 21 dan skor_komputer <= 21
+        while pemain_aman:
+            # TODO 7: bikin while typo input
+            typo = True
+            while typo:
+                aksi_pemain = input("\nKetik 'y' kalau mau tambah kartu, ketik 'g' kalau mau pass aja: ").lower()
+                if aksi_pemain == 'y' or aksi_pemain == 'g':
+                    typo = False
                 else:
-                    aksi_komputer = random.choice(pilihan_aksi)
-                    if aksi_komputer == 'hand': 
-                        kartu_komputer = ambil_kartu(1, kartu_komputer)
-                        skor_komputer = hitung_skor(kartu_komputer)
-                        if skor_komputer > 21:
-                            keadaan_terakhir()
-                            print("Skor lawan kebablasan. Kamu menang :D")
-                        # else:
-                            # balik lagi ke input random aksi_komputer
-                            # ini juga loop while <= 21
-                    elif aksi_komputer == 'pass':
-                        if skor_pemain > skor_komputer:
-                            keadaan_terakhir()
-                            print("Kamu menang :D")
-                        elif skor_pemain == skor_komputer:
-                            keadaan_terakhir()
-                            print("Seri")
-                        else:
-                            keadaan_terakhir()
-                            print("Kamu kalah D:")
+                    print("Kamu typo. Coba input ulang.")
+
+            # TODO 2: susun kondisional if else mentah biar ada gambaran
+            if aksi_pemain == 'y':
+                kartu_pemain = ambil_kartu(1, kartu_pemain)
+                skor_pemain = hitung_skor(kartu_pemain)
+                # TODO 9:tambahin kondisi blackjack ke user
+                if skor_pemain == 0:
+                    keadaan_terakhir()
+                    print("Blackjack. Kamu menang :3")
+                    pemain_aman = False
+                    komputer_aman = False
+                elif skor_pemain > 21:
+                    keadaan_terakhir()
+                    print("Skormu kebablasan. Kamu kalah :(")
+                    pemain_aman = False
+                    komputer_aman = False
+                else:
+                    print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
+                    print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
+                    # balik ke input aksi_pemain
+                    # bikin loop while <= 21 berarti
+            elif aksi_pemain == 'g':
+                while komputer_aman:
+                    # TODO 10: tambahin kondisi blackjack ke komputer
+                    if skor_komputer == 0:
+                        keadaan_terakhir()
+                        print("Komputer dapet blackjack! Kamu kalah D:")
+                        pemain_aman = False
+                        komputer_aman = False
+                    else:
+                        aksi_komputer = random.choice(pilihan_aksi)
+                        if aksi_komputer == 'hand': 
+                            kartu_komputer = ambil_kartu(1, kartu_komputer)
+                            skor_komputer = hitung_skor(kartu_komputer)
+                            if skor_komputer > 21:
+                                keadaan_terakhir()
+                                print("Skor lawan kebablasan. Kamu menang :D")
+                                pemain_aman = False
+                                komputer_aman = False
+                            # else:
+                                # balik lagi ke input random aksi_komputer
+                                # ini juga loop while <= 21
+                        elif aksi_komputer == 'pass':
+                            if skor_pemain > skor_komputer:
+                                keadaan_terakhir()
+                                print("Kamu menang :D")
+                                pemain_aman = False
+                                komputer_aman = False
+                            elif skor_pemain == skor_komputer:
+                                keadaan_terakhir()
+                                print("Seri")
+                                pemain_aman = False
+                                komputer_aman = False
+                            else:
+                                keadaan_terakhir()
+                                print("Kamu kalah D:")
+                                pemain_aman = False
+                                komputer_aman = False
     
-    if main_lagi == 'g':
+    elif main_lagi == 'g':
         print('See ya')
         masih_mau_main = False
-    else:
-        print("\nMau main satu ronde blackjack lagi sama aku?")
+    
+    print("\nMau main satu ronde blackjack lagi sama aku?")
