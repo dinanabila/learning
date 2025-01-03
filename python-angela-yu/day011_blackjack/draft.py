@@ -155,3 +155,19 @@ while masih_mau_main:
         masih_mau_main = False
     
     print("\nMau main satu ronde blackjack lagi sama aku?")
+
+# ========
+# EVALUASI
+# ========
+
+# Angela lebih ringkas kodenya, soalnya dia definisiin fungsi play()
+# kalau aku kan pakai while, jadi bertele-tele banget :'))
+
+# Angela pakai strategi 17 buat komputer,
+# kalau aku pakai random buat gerakin aksi komputer (ambil kartu / pass)
+
+# Ya udahlah, yang penting bisa jalan blackjack nya
+
+# ============
+# EVALUASI END
+# ============
