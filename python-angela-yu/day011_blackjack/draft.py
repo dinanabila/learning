@@ -18,12 +18,14 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 pilihan_aksi = ['pass', 'hand']
 
 def ambil_kartu(banyak_kartu, kartu_siapa):
+    '''Ambil kartu acak sebanyak "banyak_kartu" ke tangan "kartu_siapa"'''
     hand = kartu_siapa
     for _ in range(banyak_kartu):
         hand.append(random.choice(cards))
     return hand
 
 def hitung_skor(kartu_siapa):
+    '''Hitung skor dari user "kartu_siapa"'''
     skor = 0
     for i in range(len(kartu_siapa)):
         skor += kartu_siapa[i]
@@ -31,6 +33,7 @@ def hitung_skor(kartu_siapa):
 
 # TODO 8: bikin fungsi print keadaan terakhir kartu pemain & komputer biar ga redundant
 def keadaan_terakhir():
+    '''Print semua kartu di tangan player dan komputer beserta skornya'''
     pemain_aman = False
     komputer_aman = False
     print(f"    Kartu di tangan kamu: {kartu_pemain}, skor sekarang: {skor_pemain}")
