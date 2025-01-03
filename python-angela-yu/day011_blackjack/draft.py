@@ -45,6 +45,7 @@ aksi_pemain = input("Ketik 'y' kalau mau tambah kartu, ketik 'g' kalau mau pass 
 # TODO 3: bikin list buat pilihan random komputer: pass / ambil kartu lagi
 pilihan_aksi = ['pass', 'hand']
 
+aksi_komputer = random.choice(pilihan_aksi)
 # TODO 2: susun kondisional if else mentah biar ada gambaran
 if aksi_pemain == 'y':
     kartu_pemain = ambil_kartu(1, kartu_pemain)
@@ -53,35 +54,22 @@ if aksi_pemain == 'y':
     print(f"    Kartu pertama komputer: {kartu_komputer[0]}")
     if skor_pemain > 21:
         print("Skormu kebablasan. Kamu kalah :(")
-    else:
-        aksi_komputer = random.choice(pilihan_aksi)
-        if aksi_komputer == 'pass':
-            if skor_pemain > skor_komputer:
-                print("Kamu menang :D")
-            elif skor_pemain == skor_komputer:
-                print("Kamu kalah")
-            else:
-                print("Seri")
-        elif aksi_komputer == 'hand': 
-            kartu_komputer = ambil_kartu(1, kartu_komputer)
-            skor_komputer = hitung_skor(kartu_komputer)
-            if kartu_komputer > 21:
-                print("Skor lawan kebablasan. Kamu menang :D")
-            # else:
-                # balik lagi ke atas
-elif aksi_pemain == 'n':
-    aksi_komputer = random.choice(pilihan_aksi)
-    if aksi_komputer == 'pass':
-        if skor_pemain > skor_komputer:
-            print("Kamu menang :D")
-        elif skor_pemain == skor_komputer:
-            print("Kamu kalah")
-        else:
-            print("Seri")
-    elif aksi_komputer == 'hand': 
+    #else:
+        # balik ke input aksi_pemain
+        # bikin loop while < 21 berarti
+else:
+    if aksi_komputer == 'hand': 
         kartu_komputer = ambil_kartu(1, kartu_komputer)
         skor_komputer = hitung_skor(kartu_komputer)
         if kartu_komputer > 21:
             print("Skor lawan kebablasan. Kamu menang :D")
         # else:
-            # balik lagi ke atas
+            # balik lagi ke input random aksi_komputer
+            # ini juga loop while < 21
+    elif aksi_komputer == 'pass':
+        if skor_pemain > skor_komputer:
+            print("Kamu menang :D")
+        elif skor_pemain == skor_komputer:
+            print("Seri")
+        else:
+            print("Kamu kalah D:")
