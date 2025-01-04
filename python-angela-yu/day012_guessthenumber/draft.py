@@ -8,7 +8,7 @@ def tebak_angka():
     def compare_nyawa(alat_loop):
         if nyawa == 0:
             print("Yah, sisa kesempatanmu udah habis.")
-            print(f"\N******* ANGKA YANG BENAR: {yang_benar} *******")
+            print(f"\n******* ANGKA YANG BENAR: {yang_benar} *******")
             return False
         else:
             print("Coba tebak lagi")
