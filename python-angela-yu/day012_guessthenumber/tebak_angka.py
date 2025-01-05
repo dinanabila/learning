@@ -22,7 +22,8 @@ def game_tebak_angka():
 
     def hasil(jumlah_nyawa, tebakan_user, yang_benar):
         if jumlah_nyawa == 1 and tebakan_user != yang_benar:
-            print("Yah, sisa kesempatanmu udah habis.")
+            print("Yah, sisa kesempatanmu udah habis")
+            print(f"Angka yang benar: {yang_benar}")
         elif jumlah_nyawa > 0 and tebakan_user == yang_benar:
             print("Selamatt, tebakanmu benar! :D")
         return lagi_atau_ga()
