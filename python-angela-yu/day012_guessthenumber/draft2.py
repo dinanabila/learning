@@ -23,15 +23,36 @@ from art import logo
 GAMPANG = 10
 SUSAH = 5
 
-# MESIN: input mode, output nyawa
+# [MESIN] input: mode, output: nyawa
 def genset_nyawa(mode_apa):
     if mode_apa == 'a':
         return GAMPANG
     else:
         return SUSAH
 
-# MESIN: input nyawa dan tebakan, output keputusan
-# def tebakan()
+# [MESIN] input: nyawa dan tebakan, output: tebakan
+# def nebak(): 
+#     return int(input("\nKetik angka tebakanmu: "))
+# mesin ini masukin ke dalam loop di mesin tebakan, 
+# di variabel tebakan_user
+
+# [MESIN] input: nyawa dan tebakan, output: hasil
+def hasil(jumlah_nyawa, tebakan_user):
+    if jumlah_nyawa == 0 and tebakan_user != yang_benar:
+        print("Yah, sisa kesempatanmu udah habis.")
+    else:
+        print("Selamatt, tebakanmu benar! :D")
+    
+# [MESIN] input: nyawa dan tebakan, output: keputusan
+def tebakan(jumlah_nyawa, tebakan_user):
+    while tebakan_user != yang_benar:
+        tebakan_user = int(input("\nKetik angka tebakanmu: "))
+        if jumlah_nyawa > 0 and tebakan_user != yang_benar:
+            jumlah_nyawa -= 1
+            print("Ups, bukan itu. Coba tebak lagi")
+            print(f"\n******* TERSISA {jumlah_nyawa} KESEMPATAN LAGI *******")
+        else:
+            return hasil(jumlah_nyawa, tebakan_user)
 
 
 # ALUR KESELURUHAN
@@ -39,7 +60,7 @@ def genset_nyawa(mode_apa):
 print(logo)
 print("\nHaii, ayo main tebak-tebakan angka!\nDari angka 1 - 100, coba tebak, angka apa yang kupikirkan?")
 yang_benar = random.randint(1, 100)
-print(f"ini contekan yang bener buat debugging: {yang_benar}")
+print(f"ini contekan yang bener buat debug: {yang_benar}")
 print("Tapi sebelum itu, biar lebih menantang, kita bakal batasi jumlah tebakan yang bisa kamu tebak.")
 print("\nKamu mau mode gampang (boleh 10 kali nebak), atau susah (cuma bisa 5 kali nebak)? ")
 
@@ -47,4 +68,12 @@ print("\nKamu mau mode gampang (boleh 10 kali nebak), atau susah (cuma bisa 5 ka
 mode = input("\nKetik 'a' kalau mau gampang, 'b' kalau mau susah: ").lower()
 
 nyawa = genset_nyawa(mode)
-print(nyawa)
+
+angka_tebakan = None
+tebakan(nyawa, angka_tebakan)
+
+
+
+
+
+
