@@ -84,6 +84,15 @@ print("\nKamu mau mode gampang (boleh 10 kali nebak), atau susah (cuma bisa 5 ka
 
 game_tebak_angka()
 
+# ========
+# REFLEKSI
+# ========
+# sadly, 
+# setelah semua ini 
+# kodenya masih keliatan jorok :')))
+# untuk sekarang, ya sudahlah..
+# sambil jalan aja, 
+# lama-lama juga bisa bikin yang lebih apik
 
 
 
