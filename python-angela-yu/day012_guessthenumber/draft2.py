@@ -9,4 +9,11 @@
 # juga, biasakan sederhanakan alurnya
 # biar ga jorok
 
+# ==============
+
+# di flowchart 2
+# aku punya beberapa mesin a.k.a fungsi
+
+# let's try build them
+
 
