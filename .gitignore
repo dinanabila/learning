@@ -1,11 +1,4 @@
 python-angela-yu/day7_hangman/__pycache__/hangman_art.cpython-313.pyc
 python-angela-yu/day7_hangman/__pycache__/hangman_words.cpython-313.pyc
 python-angela-yu/day011_blackjack/__pycache__/art.cpython-313.pyc
-python-angela-yu/day013_debugging/maths.py
 python-angela-yu/day013_debugging/__pycache__/maths.cpython-313.pyc
-python-angela-yu/day013_debugging/exercise5_usedebugger.py
-python-angela-yu/day013_debugging/exercise4_printfordebug.py
-python-angela-yu/day013_debugging/exercise3_tryexcept.py
-python-angela-yu/day013_debugging/exercise2_playcomputer.py
-python-angela-yu/day013_debugging/exercise1_reproducebug.py
-.gitignore
