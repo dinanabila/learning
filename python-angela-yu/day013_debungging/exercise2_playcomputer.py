@@ -4,7 +4,7 @@ tahun = int(input("Kamu lahir tahun berapa?: "))
 
 if tahun > 1980 and tahun < 1994:
     print("Kamu millenial")
-elif tahun > 1994:
+elif tahun > 1994: # ini harusnya >= 1994
     print("kamu gen z")
 
 
