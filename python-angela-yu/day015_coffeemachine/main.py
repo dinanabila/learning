@@ -23,3 +23,18 @@ MENU = {
         "cost": 3.0,
     }
 }
+
+
+# TODO 1. tanya user, mau minum apa? (espresso/latte/cappuccino)
+
+# TODO 2. matiin coffee machine kalau user input str "off"
+
+# TODO 3. print report (tampilin daftar sisa ingredients di coffee machine)
+
+# TODO 4. cek bahannya cukup atau ga untuk bikin pilihan kopi user
+
+# TODO 5. process coins
+
+# TODO 6. cek transaksi berhasil atau ga
+
+# TODO 7. bikin kopi
