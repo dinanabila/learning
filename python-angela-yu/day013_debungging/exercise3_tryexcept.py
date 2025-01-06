@@ -9,4 +9,4 @@ except ValueError: # ValueError ini didapet dari eror pas ngerun inputan str
 
 if usia > 18:
     print("Kamu udah boleh nyetir di usia {usia}") # ini tipe bug yang mengandalkan exp pemrogram. 
-    # Kalau ga tau f, bakal hah hoh hah hoh
+    # Kalau ga tau f, bakal hah hoh hah hoh, kecuali nanya gpt. enak si skrng ada gpt
