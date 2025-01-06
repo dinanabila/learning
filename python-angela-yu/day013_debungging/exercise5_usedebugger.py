@@ -2,6 +2,7 @@ import random
 import maths
 
 
+
 def mutate(a_list):
     b_list = []
     new_item = 0
@@ -9,7 +10,7 @@ def mutate(a_list):
         new_item = item * 2
         new_item += random.randint(1, 3)
         new_item = maths.add(new_item, item)
-    b_list.append(new_item)
+    b_list.append(new_item) # ini harusnya masukin ke dalam loop for (indent)
     print(b_list)
 
 
