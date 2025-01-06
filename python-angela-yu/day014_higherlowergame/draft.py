@@ -5,6 +5,7 @@ import art
 # bikin fungsi buat ngecek perbandingan jumlah follower kedua data itu
 # outputnya jawaban yang benar (yang punya lebih banyak follower)
 def compare_follower(a, b):
+    '''input: jumlah follower kedua akun. output: nama akun yang followernya lebih banyak'''
     if a['follower_count'] < b['follower_count']:
         return b['name'] # ig2
     elif a['follower_count'] > b['follower_count']:
@@ -13,6 +14,7 @@ def compare_follower(a, b):
 
 # bikin fungsi buat ngecek jawaban user bener atau ga
 def cek_jawaban(user, benar, skor):
+    '''input: jawaban user, jawaban benar, sama skor. return skor'''
     # bikin kondisional, kalau bener, print current score + lanjut ke soal baru, 
     # kalau salah, print total skor akhir dan hentikan program
     if user != benar:
@@ -61,12 +63,19 @@ def higher_lower_game():
             jawaban_benar = compare_follower(ig1, ig2)
             jumlah_skor = cek_jawaban(jawaban_user, jawaban_benar, jumlah_skor)
 
-        lagi_atau_ga = input("\nMau main lagi? Ketik 'y' kalau mau, 'g' kalau udahan: ")
-        if lagi_atau_ga == 'g':
-            print("Ok, see ya! ( 'v')/")
-            masih_mau_main = False
-        else:
-            print("\n" * 100)
+        typo = True
+        while typo:
+            lagi_atau_ga = input("\nMau main lagi? Ketik 'y' kalau mau, 'g' kalau udahan: ")
+            if lagi_atau_ga == 'g' or lagi_atau_ga == 'y':
+                if lagi_atau_ga == 'g':
+                    print("Ok, see ya! ( 'v')/")
+                    masih_mau_main = False
+                else:
+                    print("\n" * 100)
+                typo = False
+            else:
+                print("Ups, kamu typo. Coba lagi.")
+
             
 
         
