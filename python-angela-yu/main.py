@@ -26,8 +26,7 @@ while aksi_user != 'off':
         kopi = pilih_kopi.find_drink(aksi_user)
         # TODO 4: cek bahannya cukup atau ga sesuai kopi yang dipesan
         # TODO 7: seduh kopi
-        if mesin_seduh.is_resource_sufficient(kopi):
-            kasir.make_payment(kopi.cost)
+        if mesin_seduh.is_resource_sufficient(kopi) and kasir.make_payment(kopi.cost):
             mesin_seduh.make_coffee(kopi)
             # TODO 5: hitung koin
             # TODO 6: cek transaksinya sukses ga
