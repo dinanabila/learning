@@ -19,11 +19,17 @@ class Snake():
 
     def bikin_snake(self):
         for posisi in POSISI_AWAL:
-            part_badan = Turtle("square")
-            part_badan.color("white")
-            part_badan.penup()
-            part_badan.goto(posisi)
-            self.semua_part_badan.append(part_badan)
+            self.tambah_part_badan(posisi)
+
+    def tambah_part_badan(self, posisi):
+        part_badan = Turtle("square")
+        part_badan.color("white")
+        part_badan.penup()
+        part_badan.goto(posisi)
+        self.semua_part_badan.append(part_badan)
+
+    def memanjang(self):
+        self.tambah_part_badan(self.semua_part_badan[-1].position())
 
     def move(self):
         for part_ke in range(len(self.semua_part_badan) - 1, 0, -1):
