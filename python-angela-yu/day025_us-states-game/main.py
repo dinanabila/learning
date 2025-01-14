@@ -28,10 +28,15 @@ while jumlah_yang_bener < len(list_semua_state):
     jawaban_state_dari_user = screen.textinput(title=score_board, prompt="Ketik statenya").title()
     
     if jawaban_state_dari_user == "Exit":
-        states_to_learn = []
-        for state in list_semua_state:
-            if state not in list_tebakan_yang_bener:
-                states_to_learn.append(state)
+        # states_to_learn = []
+        # for state in list_semua_state:
+        #     if state not in list_tebakan_yang_bener:
+        #         states_to_learn.append(state)
+        # ================  
+        # challenge day 26: persingkat 4 baris kode di atas, pakai list comprehension
+        states_to_learn = [state for state in list_semua_state if state not in list_tebakan_yang_bener]
+        # end challenge  
+        # ================ 
         df = pd.DataFrame(states_to_learn)
         df.to_csv("day025_us-states-game/states_to_learn.csv")
         break
