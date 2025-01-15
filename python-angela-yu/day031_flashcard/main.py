@@ -29,7 +29,11 @@ kamus_france = data.to_dict(orient="records")
 # ---------------------------- FUNGSI GANTI CARD ------------------------------- #
 
 def ganti_card():
-    global comot_kata
+    global comot_kata, timer_balik_kartu
+    # ===================
+    # ini buat handle bug 
+    window.after_cancel(timer_balik_kartu)
+    # ===================
     comot_kata = random.choice(kamus_france)
     french_text = comot_kata["French"]
     canvas.itemconfig(card_title, text="French", fill="black")
@@ -37,7 +41,12 @@ def ganti_card():
     canvas.itemconfig(card_background, image=card_front_img)
 
     # buat itung mundur 3 detik, abis itu balik kartu
-    window.after(3000, balik_card)
+    timer_balik_kartu = window.after(3000, balik_card)
+
+    # UNTUK BUG KLIK SEBELUM BALIK KARTU
+    # SOLUSINYA BIKIN GLOBAL CONSTANT BARU
+    # TERUS JUGA TIMER NYA MASUKIN VARIABEL
+    # BIAR SI VARIABEL ITU BISA KITA MASUKIN KE AFTER_CANCEL() NYA TKINTER
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
@@ -53,6 +62,10 @@ def balik_card():
 window = Tk()
 window.title("French Flash Card")
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
+
+# ini juga harus ditarok di sini, 
+# supaya kedeteksi pas mau cancel timernya di fungsi ganti_card()
+timer_balik_kartu = window.after(3000, balik_card)
 
 # ======
 # LAYOUT
