@@ -9,13 +9,28 @@ import random
 
 # ---------------------------- READ CSV ------------------------------- #
 
-kamus_france = pd.read_csv("day031_flashcard/data/french_words.csv")
+data = pd.read_csv("day031_flashcard/data/french_words.csv")
+
+# tambahan dari angela:
+
+kamus_france = data.to_dict(orient="records") 
+# orient records ini biar dict keluarannya bisa jadi bentuk kamus--
+# france-english beneran per masing-masing katanya
+# jadi berguna banget biar kerjaannya ga sulit dan bertele-tele
+
+# bentuknya itu jadinya list, yang isinya dict dict
+# tiap dict isinya 1 kata france-english
+
+# ini contoh sampelnya:
+# print(kamus_france)
+# [{'French': 'partie', 'English': 'part'}, {'French': 'histoire', 'English': 'history'},
 
 # ---------------------------- FUNGSI GANTI CARD ------------------------------- #
 
 def ganti_card():
-
-    canvas.itemconfig(word_text, text=f"{random.choice(kamus_france["French"])}")
+    french_text = random.choice(kamus_france)["French"]
+    canvas.itemconfig(card_title, text=f"French")
+    canvas.itemconfig(card_word, text=f"{french_text}")
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -42,8 +57,8 @@ canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0
 card_back_img = PhotoImage(file="day031_flashcard/images/card_back.png")
 card_front_img = PhotoImage(file="day031_flashcard/images/card_front.png")
 canvas.create_image(400, 263, image=card_front_img)
-title_text = canvas.create_text(400, 150, text="French", font=(FONT_NAME, 40, "italic"))
-word_text = canvas.create_text(400, 263, text="Word", font=(FONT_NAME, 60, "bold"))
+card_title = canvas.create_text(400, 150, text="", font=(FONT_NAME, 40, "italic"))
+card_word = canvas.create_text(400, 263, text="", font=(FONT_NAME, 60, "bold"))
 canvas.grid(row=0, column=0, columnspan=2)
 
 
@@ -63,5 +78,8 @@ tombol_silang.grid(row=1, column=0)
 ceklis_img = PhotoImage(file="day031_flashcard/images/right.png")
 tombol_ceklis = Button(image=ceklis_img, command=ganti_card, bg=BACKGROUND_COLOR, highlightthickness=0)
 tombol_ceklis.grid(row=1, column=1)
+
+
+ganti_card()
 
 window.mainloop()
