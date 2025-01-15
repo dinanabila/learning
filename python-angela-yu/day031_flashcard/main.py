@@ -1,5 +1,6 @@
 BACKGROUND_COLOR = "#B1DDC6"
 FONT_NAME = "Arial"
+comot_kata = {}
 
 from tkinter import *
 import pandas as pd
@@ -28,9 +29,22 @@ kamus_france = data.to_dict(orient="records")
 # ---------------------------- FUNGSI GANTI CARD ------------------------------- #
 
 def ganti_card():
-    french_text = random.choice(kamus_france)["French"]
+    global comot_kata
+    comot_kata = random.choice(kamus_france)
+    french_text = comot_kata["French"]
     canvas.itemconfig(card_title, text=f"French")
-    canvas.itemconfig(card_word, text=f"{french_text}")
+    canvas.itemconfig(card_word, text=french_text)
+    
+    # buat itung mundur 3 detik, abis itu balik kartu
+    window.after(3000, balik_card)
+
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
+
+def balik_card():
+    global comot_kata
+    english_text = comot_kata["English"]
+    canvas.itemconfig(card_title, text="English")
+    canvas.itemconfig(card_word, text=english_text)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -45,8 +59,6 @@ window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 # kita pakai grid layout (row, col)
 # 0,0     0,1
 # 1,0     1,1
-
-
 
 
 # ========================================================
