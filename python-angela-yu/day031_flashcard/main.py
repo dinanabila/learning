@@ -26,6 +26,33 @@ kamus_france = data.to_dict(orient="records")
 # print(kamus_france)
 # [{'French': 'partie', 'English': 'part'}, {'French': 'histoire', 'English': 'history'},
 
+
+# ---------------------------- FUNGSI HAPUS KATA ------------------------------- #
+
+# fungsi ini dipakai sama tombol ceklis
+# wordnya bakal kehapus dari kamus pas user klik ceklis
+# soalnya udah dikuasai, ga usah dipelajari lagi
+
+def hapus_kata():
+    global comot_kata
+    try:
+        kamus_france.remove(comot_kata)
+    except ValueError:
+        canvas.itemconfig(card_title, text="Selamat!", fill="white", font=(FONT_NAME, 40, "bold"))
+        canvas.itemconfig(card_word, text="Kamu berhasil! 'v')b", fill="white", font=(FONT_NAME, 30, "bold"))
+    else:
+        # # =============================
+        # # buat debug
+        print(f"{comot_kata} terhapus")
+        # print(kamus_france)
+        # # =============================
+
+        words_to_learn = pd.DataFrame(kamus_france)
+        words_to_learn.to_csv("day031_flashcard/data/words_to_learn.csv", index=False)
+
+        ganti_card()
+
+
 # ---------------------------- FUNGSI GANTI CARD ------------------------------- #
 
 def ganti_card():
@@ -34,14 +61,19 @@ def ganti_card():
     # ini buat handle bug 
     window.after_cancel(timer_balik_kartu)
     # ===================
-    comot_kata = random.choice(kamus_france)
-    french_text = comot_kata["French"]
-    canvas.itemconfig(card_title, text="French", fill="black")
-    canvas.itemconfig(card_word, text=french_text, fill="black")
-    canvas.itemconfig(card_background, image=card_front_img)
+    try:
+        comot_kata = random.choice(kamus_france)
+    except IndexError:
+        canvas.itemconfig(card_title, text="Selamat!", fill="white", font=(FONT_NAME, 40, "bold"))
+        canvas.itemconfig(card_word, text="Kamu berhasil 'v')b", fill="white", font=(FONT_NAME, 30, "bold"))
+    else:
+        french_text = comot_kata["French"]
+        canvas.itemconfig(card_title, text="French", fill="black")
+        canvas.itemconfig(card_word, text=french_text, fill="black")
+        canvas.itemconfig(card_background, image=card_front_img)
 
-    # buat itung mundur 3 detik, abis itu balik kartu
-    timer_balik_kartu = window.after(3000, balik_card)
+        # buat itung mundur 3 detik, abis itu balik kartu
+        timer_balik_kartu = window.after(3000, balik_card)
 
     # UNTUK BUG KLIK SEBELUM BALIK KARTU
     # SOLUSINYA BIKIN GLOBAL CONSTANT BARU
@@ -103,7 +135,7 @@ tombol_silang.grid(row=1, column=0)
 # ================================
 
 ceklis_img = PhotoImage(file="day031_flashcard/images/right.png")
-tombol_ceklis = Button(image=ceklis_img, command=ganti_card, bg=BACKGROUND_COLOR, highlightthickness=0)
+tombol_ceklis = Button(image=ceklis_img, command=hapus_kata, bg=BACKGROUND_COLOR, highlightthickness=0)
 tombol_ceklis.grid(row=1, column=1)
 
 
