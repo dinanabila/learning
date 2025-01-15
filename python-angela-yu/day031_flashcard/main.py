@@ -32,9 +32,10 @@ def ganti_card():
     global comot_kata
     comot_kata = random.choice(kamus_france)
     french_text = comot_kata["French"]
-    canvas.itemconfig(card_title, text=f"French")
-    canvas.itemconfig(card_word, text=french_text)
-    
+    canvas.itemconfig(card_title, text="French", fill="black")
+    canvas.itemconfig(card_word, text=french_text, fill="black")
+    canvas.itemconfig(card_background, image=card_front_img)
+
     # buat itung mundur 3 detik, abis itu balik kartu
     window.after(3000, balik_card)
 
@@ -43,8 +44,9 @@ def ganti_card():
 def balik_card():
     global comot_kata
     english_text = comot_kata["English"]
-    canvas.itemconfig(card_title, text="English")
-    canvas.itemconfig(card_word, text=english_text)
+    canvas.itemconfig(card_title, text="English", fill="white")
+    canvas.itemconfig(card_word, text=english_text, fill="white")
+    canvas.itemconfig(card_background, image=card_back_img)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -68,7 +70,7 @@ window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
 card_back_img = PhotoImage(file="day031_flashcard/images/card_back.png")
 card_front_img = PhotoImage(file="day031_flashcard/images/card_front.png")
-canvas.create_image(400, 263, image=card_front_img)
+card_background = canvas.create_image(400, 263, image=card_front_img)
 card_title = canvas.create_text(400, 150, text="", font=(FONT_NAME, 40, "italic"))
 card_word = canvas.create_text(400, 263, text="", font=(FONT_NAME, 60, "bold"))
 canvas.grid(row=0, column=0, columnspan=2)
