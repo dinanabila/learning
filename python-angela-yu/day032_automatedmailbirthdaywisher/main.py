@@ -5,7 +5,7 @@ import random
 import smtplib
 
 my_email = "dari@gmail.com"
-password = "dfsbg347t8grf"
+password = "tg4w5ujw4r5jnrt"
 
 # 1. Update the birthdays.csv
 data = pd.read_csv("day032_automatedmailbirthdaywisher/birthdays.csv")
@@ -42,7 +42,7 @@ for i in range(len(data_ultah)):
             connection.login(user=my_email, password=password)
             connection.sendmail(
                 from_addr=my_email,
-                to_addrs=my_email,
+                to_addrs=data_ultah[i]["email"],
                 msg=f"Subject: Happy Birthday!\n\n{surat_ucapan}"
             )
 
