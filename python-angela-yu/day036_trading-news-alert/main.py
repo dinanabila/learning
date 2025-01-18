@@ -10,7 +10,7 @@ import datetime as dt
 parameters = {
     "function":"TIME_SERIES_DAILY",
     "symbol":STOCK,
-    "apikey":"INIY9YRSCCS87HKQ",
+    "apikey":"masukinapikey",
     "outputsize": "compact"
 }
 
@@ -54,7 +54,7 @@ if persentase >= 1: # INI HARUSNYA 5, TAPI JADIIN 1 AJA BIAR BISA DITES
         "q": COMPANY_NAME,
         "from": kemarin_lusa,
         "sortBy": "popularity",
-        "apiKey": "eab9e35777da493e964486429c67819a"
+        "apiKey": "masukinapikey"
     }
     response_2 = requests.get("https://newsapi.org/v2/everything?", params=parameters_2)
     data_berita = response_2.json()
