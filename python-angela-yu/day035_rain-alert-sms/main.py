@@ -24,6 +24,7 @@ bakal_hujan = False
 for i in range(len(weather_data['list'])):
     if weather_data['list'][i]['weather'][0]['id'] < 700:
         bakal_hujan = True
+        break # kalau udah ada 1 aja jam tertentu yang ujan, hentikan loop biar ga jadi false nilainya pas kena jam cerah
 
 if bakal_hujan == True:
     print("Hari ini kudu bawa payung")
