@@ -1,0 +1,32 @@
+/* ini buat ngetes stye.css nya udah nyambung sama html nya atau belum */
+/* * {
+    background-color: red;
+} */
+
+/* todo 2 */
+#red {
+    color: red;
+}
+#blue {
+    color: blue;
+}
+#orange {
+    color: orange;
+}
+#green {
+    color: green;
+}
+#yellow {
+    color: yellow;
+}
+
+/* todo 3 */
+.color-title {
+    font-weight: normal;
+}
+
+/* todo 4 */
+img {
+    height: 200px;
+    width: 200px;
+}
