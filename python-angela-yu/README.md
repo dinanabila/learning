@@ -1,5 +1,5 @@
 # Yang Dipelajari:
-**day 001**: 
+**day 001**: <br>
 variable, bikin user input data
 
 **day 002**: tipe data, manipulasi string
