@@ -90,7 +90,7 @@ API Authentication, environment variables
 API post, put, dan delete requests, advanced authentication pakai HTTP header
 
 **day 038**: <br>
-Sheety API, berguna buat konekin prrgram ke spreadsheet
+Sheety API, berguna buat konekin program ke spreadsheet
 
 **day 041**: <br>
 HTML self closing tags, heading dan paragraph element
@@ -103,3 +103,9 @@ cara ngaitin CSS ke HTML, CSS selectors
 
 **day 044**: <br>
 CSS colours, font properties, inspecting CSS di inspect chrome, CSS box model - margin, padding, border
+
+**day 045**: <br>
+web scraping pakai beautifulsoup
+
+**day 047**: <br>
+cara dapetin header buat requests (ini berguna buat request data dari web)
