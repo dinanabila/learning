@@ -109,3 +109,15 @@ web scraping pakai beautifulsoup
 
 **day 047**: <br>
 cara dapetin header buat requests (ini berguna buat request data dari web)
+
+
+
+# Day yang sebagian/semua stepnya ku-skip:
+- day 033
+- day 035
+- day 036
+- day 038
+- day 039
+- day 040
+- day 046
+- day 047
