@@ -110,9 +110,12 @@ web scraping pakai beautifulsoup
 **day 047**: <br>
 cara dapetin header buat requests (ini berguna buat request data dari web)
 
+**day 048**: <br>
+web scraping pakai selenium, otomasi klik dan isi form pakai selenium, bikin bot game pakai selenium
 
 
-# Day yang sebagian/semua stepnya ku-skip:
+
+# Day yang sebagian stepnya ku-skip:
 - day 033
 - day 035
 - day 036
@@ -121,3 +124,8 @@ cara dapetin header buat requests (ini berguna buat request data dari web)
 - day 040
 - day 046
 - day 047
+
+
+
+# Day yang full ku-skip:
+- day 049 - 052
