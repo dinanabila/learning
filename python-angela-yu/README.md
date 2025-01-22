@@ -132,4 +132,4 @@ data exploration di notebook pakai python pandas
 
 # Day yang full ku-skip:
 - day 049 - 052
-- day 054 - 71
+- day 054 - 071
