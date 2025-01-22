@@ -113,6 +113,9 @@ cara dapetin header buat requests (ini berguna buat request data dari web)
 **day 048**: <br>
 web scraping pakai selenium, otomasi klik dan isi form pakai selenium, bikin bot game pakai selenium
 
+**day 072**: <br>
+data exploration di notebook pakai python pandas
+
 
 
 # Day yang sebagian stepnya ku-skip:
@@ -129,3 +132,4 @@ web scraping pakai selenium, otomasi klik dan isi form pakai selenium, bikin bot
 
 # Day yang full ku-skip:
 - day 049 - 052
+- day 054 - 71
