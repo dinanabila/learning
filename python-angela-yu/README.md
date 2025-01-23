@@ -141,8 +141,14 @@ pengenalan data visualization pakai matplotlib, rolling mean buat memperhalus ti
 - day 046
 - day 047
 
+**Ket:** <br>
+Yang ku-skip, itu bagian yang udah nyentuh implementasi programnya. Kek kirim sms / wa otomatis, itu ku-skip karena belum mau register no.hp.  
 
 
 # 💨 Day yang full ku-skip:
-- day 049 - 052
-- day 054 - 071
+- day 049 - 052 (bikin bot untuk medsos)
+- day 054 - 071 (flask)
+
+
+**Alasan skip:** <br>
+Sekarang lagi fokus belajar data
