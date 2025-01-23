@@ -1,4 +1,14 @@
-# Yang Dipelajari:
+# ❤ Memorable Takeaways:
+- kita semua memproduksi bug
+- dapet error pas ngetes program itu wajar banget, justru kalau ga ada error.. (isi sendiri)
+- ga males eksplorasi dokumentasi library adalah kunci menjadi pengoding andal 😎
+- ngoding itu ibarat exercise, muscle ngoding bisa dilatih dan diperkuat dengan rutin ngoding
+- yang terpenting adalah kita beneran mikir solusinya, bukannya males mikir dan langsung mau tau solusinya dari orang lain / gpt
+- struggle itu tanda, kalau kita lagi tumbuh dan berkembang. (peluk struggle)
+
+
+
+# 📚 Yang Dipelajari: 
 **day 001**: <br>
 variable, bikin user input data
 
@@ -116,9 +126,12 @@ web scraping pakai selenium, otomasi klik dan isi form pakai selenium, bikin bot
 **day 072**: <br>
 data exploration di notebook pakai python pandas
 
+**day 073**: <br>
+pengenalan data visualization pakai matplotlib, rolling mean buat memperhalus time series data
 
 
-# Day yang sebagian stepnya ku-skip:
+
+# 💨 Day yang sebagian stepnya ku-skip:
 - day 033
 - day 035
 - day 036
@@ -130,6 +143,6 @@ data exploration di notebook pakai python pandas
 
 
 
-# Day yang full ku-skip:
+# 💨 Day yang full ku-skip:
 - day 049 - 052
 - day 054 - 071
