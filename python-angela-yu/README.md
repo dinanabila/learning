@@ -5,7 +5,7 @@
 - ngoding itu ibarat exercise, muscle ngoding bisa dilatih dan diperkuat dengan rutin ngoding
 - yang terpenting adalah kita **beneran mikir** solusinya, bukannya males mikir dan langsung mau tau solusinya dari orang lain / gpt
 - struggle itu tanda, kalau kita lagi tumbuh dan berkembang (**peluk struggle**)
-- yang penting **ngerti** kodenya, bukan hapal. jaman sekarang memori udah murah, udah ada flashdisk, udah ada harddisk, tinggal klik-klik, simpen informasinya, klik-klik, akses, dapet lagi deh informasinya.
+- yang penting **ngerti** kodenya, bukan hapal. jaman sekarang memori udah murah, udah ada flashdisk, udah ada harddisk, udah ada cloud, tinggal klik-klik, simpen informasinya, klik-klik, akses, dapet lagi deh informasinya.
 
 
 
