@@ -156,11 +156,10 @@ Yang ku-skip, itu bagian yang udah nyentuh implementasi programnya. Kek kirim sm
 Sekarang lagi fokus belajar data
 
 
-# ⌛ Day yang pending dulu:
+# ⏳ Day yang pending dulu:
 - day 079 - 081 (data science)
 - day 093 (custom web scraper portfolio)
 - day 099 - 100 (data science portfolio)
 
 **Alasan pending:** <br>
-Ada hal terkait data yang perlu didalami dulu dari sumber lain. <br>
-Kemungkinan pending sampai Agustus 2025.
+Ada hal terkait data yang perlu didalami dulu dari sumber lain. Kemungkinan pending sampai Agustus 2025.
