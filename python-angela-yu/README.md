@@ -1,10 +1,11 @@
 # ❤ Memorable Takeaways:
 - kita semua memproduksi bug
 - dapet error pas ngetes program itu wajar banget, justru kalau ga ada error.. (isi sendiri)
-- ga males eksplorasi dokumentasi library adalah kunci menjadi pengoding andal 😎
+- **ga males** eksplorasi dokumentasi library adalah kunci menjadi pengoding andal 😎
 - ngoding itu ibarat exercise, muscle ngoding bisa dilatih dan diperkuat dengan rutin ngoding
-- yang terpenting adalah kita beneran mikir solusinya, bukannya males mikir dan langsung mau tau solusinya dari orang lain / gpt
-- struggle itu tanda, kalau kita lagi tumbuh dan berkembang. (peluk struggle)
+- yang terpenting adalah kita **beneran mikir** solusinya, bukannya males mikir dan langsung mau tau solusinya dari orang lain / gpt
+- struggle itu tanda, kalau kita lagi tumbuh dan berkembang (**peluk struggle**)
+- yang penting **ngerti** kodenya, bukan hapal. jaman sekarang memori udah murah, udah ada flashdisk, udah ada harddisk, tinggal klik-klik, simpen informasinya, klik-klik, akses, dapet lagi deh informasinya.
 
 
 
@@ -147,8 +148,19 @@ Yang ku-skip, itu bagian yang udah nyentuh implementasi programnya. Kek kirim sm
 
 # 💨 Day yang full ku-skip:
 - day 049 - 052 (bikin bot untuk medsos)
-- day 054 - 071 (flask)
+- day 054 - 071 (flask & web development)
+- day 082 - 098 (text-based Python program & web portfolio)
 
 
 **Alasan skip:** <br>
 Sekarang lagi fokus belajar data
+
+
+# ⌛ Day yang pending dulu:
+- day 079 - 081 (data science)
+- day 093 (custom web scraper portfolio)
+- day 099 - 100 (data science portfolio)
+
+**Alasan pending:** <br>
+Ada hal terkait data yang perlu didalami dulu dari sumber lain. <br>
+Kemungkinan pending sampai Agustus 2025.
