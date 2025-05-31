@@ -163,3 +163,8 @@ Sekarang lagi fokus belajar data
 
 **Alasan pending:** <br>
 Ada hal terkait data yang perlu didalami dulu dari sumber lain. Kemungkinan pending sampai Agustus 2025.
+
+# 🔗 Acknowledgement:
+[Development Programming Languages Python 100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/?LSNPUBID=zErSluD8o3g&ranEAID=zErSluD8o3g&ranMID=47901&ranSiteID=zErSluD8o3g-R6UJq12Xgaw5TXr0Lc6irw&deal_code=UDEAFNULP0324&utm_term=Homepage&utm_content=Textlink&utm_campaign=NewUserLP0324&utm_source=aff-campaign&utm_medium=udemyads&LSNPUBID=znpz0s2okgU&ranMID=47901&ranEAID=znpz0s2okgU&ranSiteID=znpz0s2okgU-_VW2qXonL1SawD27BeWnAQ&gad_source=1&couponCode=LETSLEARNNOW)
+
+Funded by: FF, friend of mine, thanks for the treat! :D
