@@ -1,0 +1,2 @@
+# Skenario 
+Jadi ceritanya ini tentang perusahaan yang sudah sukses dalam melakukan penjualan produknya, dan kita mau bantu mereka menangani technical support untuk customer yang juga meningkat. Semua kompilasi saran kritik feedback maupun komplain dari customer ke CS sudah didata ke dalam sekumpulan spreadsheet, cuman karena udah makin banyak, jadi kita perlu pakai SQL untuk menangani datanya. Untuk case nya bisa dilihat di file-file di dalam subrepo ini.
