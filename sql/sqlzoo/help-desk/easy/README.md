@@ -13,9 +13,9 @@
 **Solusi**: pakai GROUPBY berdasarkan kolom status dari tabel Issue, terus bikin kolom baru untuk hasilnya pakai COUNT, namain kolomnya pakai AS
 
 # 4
-**Yang diminta**: Panggilan telpon dari customer biasanya ditangani oleh staf non-manager, tapi, ada juga panggilan yang dialihkan ke manager. Ada berapa panggilan yang dialihkan ke manager?
-**Solusi**: Pakai kolom Manager dari tabel Shift dan kolom Taken_by dari tabel Issue
+**Yang diminta**: Panggilan telpon dari customer biasanya ditangani oleh staf non-manager, tapi, ada juga panggilan yang dialihkan ke manager. Ada berapa panggilan yang dialihkan ke manager? <br>
+**Solusi**: Pakai kolom Manager dari tabel Shift dan kolom Assigned_to dari tabel Issue. Bikin gimana caranya supaya semua yang ada di kolom Manager itu kalau ada di kolom Assigned_to berarti itu kita simpen, lalu akhirnya dihitung jumlahnya. Bikinnya pakai subquery.
 
 # 5
-**Yang diminta**: Kolom first_name dan last_name manager di setiap shift beserta tanggal dan type shift
-**Solusi**: Pakai kolom Manager, Shift_date, Shift_type dari tabel Shift sana kolom Staff_code, First_name, Last_name dari tabel Staff
+**Yang diminta**: Kolom first_name dan last_name manager di setiap shift beserta tanggal dan type shift <br>
+**Solusi**: Pakai kolom Manager, Shift_date, Shift_type dari tabel Shift sama kolom Staff_code, First_name, Last_name dari tabel Staff. Samain Manger sama Staff_code buat dapetin datanya. 
