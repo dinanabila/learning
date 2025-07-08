@@ -1,4 +1,4 @@
-**Link Soal: ** [https://sqlzoo.net/wiki/Helpdesk_Medium_Questions](https://sqlzoo.net/wiki/Helpdesk_Medium_Questions)
+**Link Soal:** [https://sqlzoo.net/wiki/Helpdesk_Medium_Questions](https://sqlzoo.net/wiki/Helpdesk_Medium_Questions)
 
 # 7
 **Yang diminta:** first_name dan last_name yang ga pernah nelpon <br>
