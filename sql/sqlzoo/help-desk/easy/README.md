@@ -6,7 +6,7 @@
 
 # 2
 **Yang diminta**: customer bernama Samantha Hall menelpon 3x pada tanggal 2017-08-14. Tunjukkan masing-masing tanggal dan waktu (digabung) penelponannya. <br>
-**Solusi**: 
+**Solusi**: join kan dulu tabel Caller sama Issue based on kolom Caller_id, lalu cari call_date dengan first_name Samantha dan last_name Hall. Tampilkan call_date pakai DATE_FORMAT(call_date, '%Y-%m-%d %T')
 
 # 3
 **Yang diminta**: Jumlah panggilan telpon dari customer berdasarkan status <br>
