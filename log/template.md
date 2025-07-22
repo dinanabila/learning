@@ -1,16 +1,16 @@
 # YYYY/MM/DD
 
-## Yang didapat hari ini
+## Accomplishments
 - meong
 - meong
 - meong
 
-## Hal yang masih bikin mikir
+## Thoughts
 - nyan
 - nyan
 - nyan
 
-## Langkah selanjutnya
+## Next Steps
 - rawr
 - rawr
 - rawr
